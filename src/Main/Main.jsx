@@ -14,13 +14,15 @@ class Main extends React.Component {
     this.convolution = this.convolution.bind(this);
 
     this.video = null;
-    this.canvas = null;
-    this.canvasContext = null;
+    this.canvas1 = null;
+    this.canvasContext1 = null;
+    this.canvas2 = null;
+    this.canvasContext2 = null;
     this.blurMatrix = null;
     this.blurGPUKernel = null;
     this.mainImage = null;
     this.doubleBuffer = null;
-    this.gpu = null;
+    this.gpu = new GPU();
 
     this.state = {
       width: 0,
@@ -52,11 +54,8 @@ class Main extends React.Component {
       });
   
     self.video.addEventListener("play", function () {
-        self.canvasContext = self.canvas.getContext('webgl2', { premultipliedAlpha: false });
-        new GPU({
-          self.canvas,
-          webGl: self.canvasContext
-        });
+        self.canvasContext1 = self.canvas1.getContext("2d");
+        self.canvasContext2 = self.canvas2.getContext("2d");
         self.initializeCompution();
         self.setState({
           width: self.video.videoWidth,
@@ -75,8 +74,12 @@ class Main extends React.Component {
   }
 
   initializeCompution() {
-    this.canvas.width = this.video.videoWidth;
-    this.canvas.height = this.video.videoHeight;
+    this.canvas1.width = this.video.videoWidth;
+    this.canvas1.height = this.video.videoHeight;
+    this.canvas2.width = this.video.videoWidth;
+    this.canvas2.height = this.video.videoHeight;
+    this.mainImage = new Float32Array(this.video.videoWidth * this.video.videoHeight);
+    this.doubleBuffer = new Float32Array(this.video.videoWidth * this.video.videoHeight);
     this.blurMatrix = this.createBlurMatrix(3);
     this.blurGPUKernel = this.createGPUKernel(this.video.videoWidth, this.video.videoHeight, this.blurMatrix.mean);
   }
