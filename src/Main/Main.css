@@ -1,0 +1,28 @@
+html {
+  width: 100%;
+  background-color: #;
+}
+
+body {
+  font-family: 'Roboto', normal;
+  font-weight: 500;
+  padding: 20px;
+}
+
+h1 {
+  margin-top: 0px;
+}
+
+.section {
+  margin: 10px auto;
+  background-color: #EEE;
+  box-shadow: 0px 2px 5px 0 rgba(0,0,0,.26);
+  padding: 22px;
+  min-width: 500px;
+  max-width: 900px;
+}
+
+.dashboard {
+  border: 1px solid #ccc;
+  overflow: hidden;
+}

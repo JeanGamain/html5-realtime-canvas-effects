@@ -3,8 +3,8 @@
 ![alt text]()
 
 # setup
-* `git clone git@github.com:JeanGamain/`
-* cd 
+* `git clone https://github.com/JeanGamain/html5CanvasRealTimeGPUBlur.git`
+* cd html5CanvasRealTimeGPUBlur
 * npm install
 * npm start
 * visit `http://localhost:8080/`

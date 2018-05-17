@@ -1,7 +1,7 @@
 {
   "name": "html5CanvasRealTimeGPUBlur",
   "version": "1.0.0",
-  "description": "test",
+  "description": "html5 Canvas RealTime GPU filter",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --progress --colors --hot --config ./webpack.config.js"
@@ -31,5 +31,13 @@
   "dependencies": {
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JeanGamain/html5CanvasRealTimeGPUBlur.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JeanGamain/html5CanvasRealTimeGPUBlur/issues"
+  },
+  "homepage": "https://github.com/JeanGamain/html5CanvasRealTimeGPUBlur#readme"
 }
