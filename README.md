@@ -9,4 +9,4 @@
 * npm start
 * visit `http://localhost:8080/`
 
-jean.gamain@epitech.eu
+jean.gamain[0]epitech.eu
